@@ -50,6 +50,9 @@ TidyData <- combined %>%
         group_by(SubjectNum,Activitiy) %>% 
         summarise_all(mean)
 
+# save tidydataset 
+write.table(TidyData, file = "TidyData.txt",
+            row.names = FALSE)
 
 # update features code book
 write.table(measurements, file = "Codebook Update - features.txt", sep = "\t",
